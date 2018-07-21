@@ -17,4 +17,6 @@ Todo List2.0版本（power by Vue.js）
 - Vuex：数据（状态）的存取
 - Axios：向服务器发请求
 
-[预览](https://allenmind.github.io/Todo-list-2.0/)
+[预览](https://allenmind.github.io/Todo-list-2.0/index.html)
+
+**由于Firebase会出现一些延迟，所以有时候数据渲染会有错误。。。（有空再来修改一下）**
