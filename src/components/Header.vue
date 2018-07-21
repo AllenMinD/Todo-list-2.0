@@ -16,7 +16,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li v-if="!auth"><router-link tag="button" to="/signin" active-class="btn-primary" type="button" class="btn btn-default navbar-btn">登录</router-link></li>
           <li v-if="!auth"><router-link tag="button" to="/signup" active-class="btn-primary" type="button" class="btn btn-default navbar-btn">注册</router-link></li>
-          <li v-if="auth"><router-link tag="button" to="/dashboard" active-class="btn-primary" type="button" class="btn btn-default navbar-btn">面板</router-link></li>
+          <li v-if="auth"><router-link tag="button" to="/dashboard" active-class="btn-primary" type="button" class="btn btn-default navbar-btn">{{ dash }}</router-link></li>
           <li v-if="auth"><button type="button" class="btn btn-success navbar-btn" @click="upload">上传当前状态</button></li>
           <li v-if="auth"><button type="button" class="btn btn-danger navbar-btn" @click="logout">注销</button></li>
         </ul>
@@ -38,6 +38,9 @@
     computed: {
       auth: function() {
         return this.$store.getters.isAuth;
+      },
+      dash: function() {
+        return this.$store.getters.getEmail;
       }
     }
   }

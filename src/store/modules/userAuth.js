@@ -17,6 +17,9 @@ var getters = {
   },
   getToken: function(state) {
     return state.token;
+  },
+  getEmail: function(state) {
+    return state.email;
   }
 };
 
@@ -31,6 +34,7 @@ var mutations = {
     state.token = null;
     state.userId = null;
     state.email = null;
+    state.databaseId = null;
   },
   setDatabaseId: function(state, id) {
     state.databaseId = id;
@@ -60,7 +64,7 @@ var actions = {
           context.dispatch('setLogoutTimer', res.data.expiresIn);
           context.dispatch('getDatabaseId');
           context.dispatch('getItemsFromDatabase');
-          router.replace('/dashboard');
+          router.replace('/');
         })
         .catch(function(error) {console.log(error)});
   },
@@ -85,7 +89,7 @@ var actions = {
           context.dispatch('setLogoutTimer', res.data.expiresIn);
           context.dispatch('getDatabaseId');
           context.dispatch('getItemsFromDatabase');
-          router.replace('/dashboard');
+          router.replace('/');
         })
   },
 

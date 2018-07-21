@@ -64,7 +64,11 @@ var actions = {
             console.log('获取到数据库的用户列表', res);
             for (var key in res.data) {
               if (key == context.getters.getDatabaseId) {
-                context.commit('initItems', res.data[key].items);
+                if (res.data[key].items == undefined) {
+                  context.commit('initItems', []);
+                } else {
+                  context.commit('initItems', res.data[key].items);
+                }
               }
             }
           }).catch(function(error) {console.log(error)});
