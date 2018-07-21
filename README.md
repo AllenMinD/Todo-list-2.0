@@ -16,3 +16,5 @@ Todo List2.0版本（power by Vue.js）
 - Vue-router：控制跳转、组件渲染、守卫
 - Vuex：数据（状态）的存取
 - Axios：向服务器发请求
+
+[预览](https://allenmind.github.io/Todo-list-2.0/)
